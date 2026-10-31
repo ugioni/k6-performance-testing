@@ -2,10 +2,10 @@ name: K6 Performance Testing
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
-  schedule:   
+    branches: [master]
+  schedule:
     - cron: '0 12 * * *'
 
 jobs:
@@ -13,11 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v7.0.0
+        uses: actions/checkout@v7.0.1
 
       - name: Setup K6
-        uses: grafana/setup-k6-action@v1.2.1
+        uses: grafana/setup-k6-action@v1.2.2
       - name: Run local k6 test
-        uses: grafana/run-k6-action@v1.4.0
+        uses: grafana/run-k6-action@v1.5.0
         with:
           path: src/tests
